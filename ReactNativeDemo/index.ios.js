@@ -1,6 +1,7 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * http://www.kancloud.cn/digest/rnative/121790
  * @flow
  */
 

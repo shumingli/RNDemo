@@ -1,6 +1,6 @@
 
 /*
- * 首页
+ * 发现
  */
 
 import React, { Component } from 'react';
@@ -14,12 +14,12 @@ import {
 
 var Util = require('./util.js');
 
-export default class HomePage extends Component {
+export default class FindPage extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>测试测试测试测试</Text>
+					<Text>发现发现</Text>
 				</View>
 			</View>
 		)
@@ -39,7 +39,7 @@ var styles = StyleSheet.create({
 	},
 });
 
-module.exports = HomePage;
+module.exports = FindPage;
 
 
 
