@@ -11,7 +11,7 @@ import {
   Navigator,
 } from 'react-native';
 
-// var LoginPage = require('./LoginPage.js');
+var LoginPage = require('./loginPage.js');
 // var HomePage = require('./homePage.js');
 var MainPage = require('./mainPage.js');
 
@@ -30,7 +30,7 @@ export default class ReactNativeDemo extends Component {
   render(){
     return(<Navigator 
       style={{flex:1}} 
-      initialRoute={{component:MainPage}}
+      initialRoute={{component:LoginPage}}
       configureScene={this.configureScene}
       renderScene={this.renderScene}/>);
   }

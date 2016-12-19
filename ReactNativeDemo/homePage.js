@@ -8,7 +8,6 @@ import {
   StyleSheet,
   View,
   Text,
-  Navigate,
   TouchableOpacity,
 } from 'react-native';
 
@@ -19,7 +18,7 @@ export default class HomePage extends Component {
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>测试测试测试测试</Text>
+					<Text>首页————</Text>
 				</View>
 			</View>
 		)
@@ -32,7 +31,6 @@ var styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 	},
 	containerTop: {
-		flex: Util.ScreenHeight-74,
 		justifyContent: 'flex-start',
 		backgroundColor: 'white',  //white
 		marginTop: 20,

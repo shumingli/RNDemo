@@ -5,16 +5,19 @@ import {
   Text,
   Image,
   View,
+  Alert,
   TextInput,
   TouchableOpacity
 } from 'react-native';
 
 var TabComponent = require('./tabComponent.js');
 
-var NetUitl = require('./httpUtil.js');
+var HttpUtil = require('./httpUtil.js');
 var RegisterPage = require('./registerPage.js');
 var RememberPage = require('./rememberPage.js');
 var RegisterTIView = require('./registerTIView.js');
+var PublicConfig = require('./publicConfig.js');
+var MainPage = require('./mainPage.js');
 
 class ShareBtnComponent extends Component{
   render(){
@@ -46,15 +49,19 @@ export default class LoginPage extends Component {
   }
   //登录
   _onLoginPress = () => {
+    var self = this;
     let params = {
-        cat_id: '1',
-        request_type: 'all',
-    }
-    // NetUitl.post('http://test.haibaotime.com/index.php/home/circlelist/id/1.json',params,function (set) {
-    //     //下面的就是请求来的数据
-        
-    // })
-    // this._navigate(HomePage,{name:'首页',phoneNumber:this.state.phoneNumber,pwd:this.state.password });
+        phoneNumber : this.state.phoneNumber,
+        password : this.state.password,
+    };
+    HttpUtil.get(PublicConfig.userLogin,params,function (set) {
+        //下面的就是请求来的数据
+        Alert.alert(
+            '提示',
+            '登录成功',
+            [{text:'OK',onPress:()=>self._navigate(MainPage)},]
+        )
+    })
   };
   //注册
   _onRegisterPress = ()=>{

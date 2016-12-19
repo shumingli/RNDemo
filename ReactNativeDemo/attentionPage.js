@@ -19,7 +19,7 @@ export default class AttentionPage extends Component {
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>关注页</Text>
+					<Text>关注————</Text>
 				</View>
 			</View>
 		)

@@ -5,17 +5,11 @@
 import React, { Component } from 'react';
 import {
     AppRegistry,
-    StyleSheet,
-    Text,
-    View,
-    ListView,
-    Image,
-    TouchableOpacity,
     Platform,
     AsyncStorage
 } from 'react-native';
  
-class NetUitl extends React.Component{
+class HttpUtil extends React.Component{
     /*
      *  get请求
      *  url:请求地址
@@ -36,11 +30,14 @@ class NetUitl extends React.Component{
         //fetch请求
         fetch(url,{
             method: 'GET',
-        }).then((response) => {
-                callback(response)
-            }).catch((error) => {
-                console.error(error);
-              });
+        }).then((response) => response.json())
+        .then((responseJSON) => {
+            console.log('返回数据');
+            console.log(responseJSON)
+            callback(responseJSON)
+        }).catch((error) => {
+            console.error(error);
+        });
     }
     /*
      *  post请求
@@ -56,7 +53,7 @@ class NetUitl extends React.Component{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body:JSON.stringify(params)
+            body:JSON.stringify(params),
         })
             .then((response) => response.json())
             .then((responseJSON) => {
@@ -69,5 +66,5 @@ class NetUitl extends React.Component{
     }
 }
  
-module.exports = NetUitl;
+module.exports = HttpUtil;
 

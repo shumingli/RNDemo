@@ -19,7 +19,7 @@ export default class MyPage extends Component {
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>我的页</Text>
+					<Text>我的————</Text>
 				</View>
 			</View>
 		)

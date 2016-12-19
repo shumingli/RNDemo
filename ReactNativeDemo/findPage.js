@@ -19,7 +19,7 @@ export default class FindPage extends Component {
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>发现发现</Text>
+					<Text>发现————</Text>
 				</View>
 			</View>
 		)

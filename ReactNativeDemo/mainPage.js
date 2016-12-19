@@ -49,6 +49,7 @@ export default class MainPage extends Component {
 			selectIndex : index,
 			item : item,
 		});
+		
 	};
 
 	render(){ 

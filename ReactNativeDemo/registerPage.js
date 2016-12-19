@@ -8,11 +8,14 @@ import {
   Text,
   Image,
   View,
+  Alert,
   TextInput,
   TouchableOpacity
 } from 'react-native';
 
-var HomePage = require('./homePage.js');
+var HttpUtil = require('./httpUtil.js');
+var MainPage = require('./mainPage.js');
+var PublicConfig = require('./publicConfig.js');
 var TabComponent = require('./tabComponent.js');
 var RegisterTIView = require('./registerTIView.js');
 
@@ -25,6 +28,13 @@ export default class RegisterPage extends Component {
 			password2: '0',
 			userName: '0',
 		}
+	}
+	_navigate(page,p={},type='Normal'){
+	    this.props.navigator.push({
+	      component: page,
+	      passProps: (p),
+	      type: type
+	    })
 	}
 
 	_onBack = ()=>{
@@ -46,8 +56,24 @@ export default class RegisterPage extends Component {
 		this.state.userName = text;
 		console.log(text);
 	}
+	//触发注册事件
 	_onRegisterPress = ()=>{
-		this.props.navigator.pop();
+		// this.props.navigator.pop();
+		var self = this;
+	    let params = {
+	        phoneNumber : this.state.contact,
+	        password : this.state.password1,
+	        userName : this.state.userName,
+	    };
+	    HttpUtil.get(PublicConfig.userRegister,params,function (set) {
+	        //下面的就是请求来的数据
+	        Alert.alert(
+	            '提示',
+	            '注册成功',
+	            [{text:'OK',onPress:()=>self._navigate(MainPage)},]
+	        )
+	    });
+
 	}
 
 	render(){
