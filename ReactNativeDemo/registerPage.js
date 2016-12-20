@@ -23,7 +23,7 @@ export default class RegisterPage extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			contact: '0',
+			phoneNumber: '0',
 			password1: '0',
 			password2: '0',
 			userName: '0',
@@ -61,19 +61,32 @@ export default class RegisterPage extends Component {
 		// this.props.navigator.pop();
 		var self = this;
 	    let params = {
-	        phoneNumber : this.state.contact,
+	        phoneNumber : this.state.phoneNumber,
 	        password : this.state.password1,
 	        userName : this.state.userName,
 	    };
-	    HttpUtil.get(PublicConfig.userRegister,params,function (set) {
+	    HttpUtil.get(PublicConfig.userRegister,params,function (resObj) {
 	        //下面的就是请求来的数据
-	        Alert.alert(
-	            '提示',
-	            '注册成功',
-	            [{text:'OK',onPress:()=>self._navigate(MainPage)},]
-	        )
+	        var code = resObj['code'];
+            //做全局处理
+            if (code == 1) {
+            	Alert.alert(
+		            '提示',
+		            '注册成功',
+		            [{text:'OK',onPress:()=>self._navigate(MainPage)},]
+		        )
+            }else if(code == 1001){
+            	Alert.alert(
+		            '提示',
+		            '账号已经存在',
+		        )
+            }else{
+            	Alert.alert(
+		            '提示',
+		            '注册失败',
+		        )
+            }
 	    });
-
 	}
 
 	render(){

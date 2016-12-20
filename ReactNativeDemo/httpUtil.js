@@ -21,23 +21,31 @@ class HttpUtil extends React.Component{
             let paramsArray = [];
             //拼接参数
             Object.keys(params).forEach(key => paramsArray.push(key + '=' + params[key]))
-            if (url.search(/\?/) === -1) {
-                url += '?' + paramsArray.join('&')
-            } else {
-                url += '&' + paramsArray.join('&')
+                if (url.search(/\?/) === -1) {
+                    url += '?' + paramsArray.join('&')
+                } else {
+                    url += '&' + paramsArray.join('&')
+                }
             }
-        }
-        //fetch请求
-        fetch(url,{
-            method: 'GET',
-        }).then((response) => response.json())
-        .then((responseJSON) => {
-            console.log('返回数据');
-            console.log(responseJSON)
-            callback(responseJSON)
-        }).catch((error) => {
-            console.error(error);
-        });
+            //fetch请求
+            fetch(url,{
+                method: 'GET',
+            }).then((response) => response.json())
+            .then((responseJSON) => {
+                console.log('返回数据');
+                let resObj = JSON.parse(responseJSON);
+                console.log(responseJSON);
+                var code = resObj['code'];
+                //做全局处理
+                if (code == 1) {
+                    var data = resObj['data'];
+                } else{ //进行错误处理
+
+                };
+                callback(resObj);
+            }).catch((error) => {
+                console.error(error);
+            });
     }
     /*
      *  post请求
@@ -55,14 +63,18 @@ class HttpUtil extends React.Component{
             },
             body:JSON.stringify(params),
         })
-            .then((response) => response.json())
-            .then((responseJSON) => {
-                console.log('返回数据');
-                console.log(responseJSON)
-                callback(responseJSON)
-            }).catch((error) => {
-                console.error(error);
-              });
+        .then((response) => response.json())
+        .then((responseJSON) => {
+            console.log('返回数据');
+            console.log(responseJSON);
+            let res = {
+                code:"1"
+            };
+            console.log(res);
+            callback(responseJSON);
+        }).catch((error) => {
+            console.error(error);
+        });
     }
 }
  

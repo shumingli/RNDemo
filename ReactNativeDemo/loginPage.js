@@ -54,13 +54,20 @@ export default class LoginPage extends Component {
         phoneNumber : this.state.phoneNumber,
         password : this.state.password,
     };
-    HttpUtil.get(PublicConfig.userLogin,params,function (set) {
+    HttpUtil.get(PublicConfig.userLogin,params,function (resObj) {
         //下面的就是请求来的数据
-        Alert.alert(
-            '提示',
-            '登录成功',
-            [{text:'OK',onPress:()=>self._navigate(MainPage)},]
-        )
+        if (resObj['code'] == 1) {
+            Alert.alert(
+              '提示',
+              '登录成功',
+              [{text:'OK',onPress:()=>self._navigate(MainPage)},]
+            );
+        } else if(resObj['code'] == 2001){
+            Alert.alert(
+              '提示',
+              '账号或密码错误'
+            );
+        };
     })
   };
   //注册
