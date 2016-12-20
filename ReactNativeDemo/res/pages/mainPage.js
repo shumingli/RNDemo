@@ -12,13 +12,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('./util.js');
-var TabComponent = require('./tabComponent.js');
-var BottomBar = require('./bottomBar.js');
-var HomePage = require('./homePage.js');
-var FindPage = require('./findPage.js');
-var AttentionPage = require('./attentionPage.js');
-var MyPage = require('./myPage.js');
+var Util = require('../utils/util.js');
+var TabComponent = require('../components/tabComponent.js');
+var BottomBar = require('../components/bottomBar.js');
+var HomePage = require('../pages/homePage.js');
+var FindPage = require('../pages/findPage.js');
+var AttentionPage = require('../pages/attentionPage.js');
+var MyPage = require('../pages/myPage.js');
 
 var tabList = ['首页','发现','关注','我的'];
 var viewList = [HomePage,FindPage,AttentionPage,MyPage];

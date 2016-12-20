@@ -1,6 +1,6 @@
 
 /*
- * 发现
+ * 我的页
  */
 
 import React, { Component } from 'react';
@@ -12,14 +12,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('./util.js');
+var Util = require('../utils/util.js');
 
-export default class FindPage extends Component {
+export default class MyPage extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>发现————</Text>
+					<Text>我的————</Text>
 				</View>
 			</View>
 		)
@@ -39,7 +39,7 @@ var styles = StyleSheet.create({
 	},
 });
 
-module.exports = FindPage;
+module.exports = MyPage;
 
 
 

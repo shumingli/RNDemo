@@ -13,11 +13,11 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var HttpUtil = require('./httpUtil.js');
-var MainPage = require('./mainPage.js');
-var PublicConfig = require('./publicConfig.js');
-var TabComponent = require('./tabComponent.js');
-var RegisterTIView = require('./registerTIView.js');
+var HttpUtil = require('../utils/httpUtil.js');
+var MainPage = require('../pages/mainPage.js');
+var PublicConfig = require('../config/publicConfig.js');
+var TabComponent = require('../components/tabComponent.js');
+var RegisterTIView = require('../components/registerTIView.js');
 
 export default class RegisterPage extends Component {
 	constructor(props){

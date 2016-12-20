@@ -10,14 +10,14 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var TabComponent = require('./tabComponent.js');
+var TabComponent = require('../components/tabComponent.js');
 
-var HttpUtil = require('./httpUtil.js');
-var RegisterPage = require('./registerPage.js');
-var RememberPage = require('./rememberPage.js');
-var RegisterTIView = require('./registerTIView.js');
-var PublicConfig = require('./publicConfig.js');
-var MainPage = require('./mainPage.js');
+var HttpUtil = require('../utils/httpUtil.js');
+var RegisterPage = require('../pages/registerPage.js');
+var RememberPage = require('../pages/rememberPage.js');
+var RegisterTIView = require('../components/registerTIView.js');
+var PublicConfig = require('../config/publicConfig.js');
+var MainPage = require('../pages/mainPage.js');
 
 class ShareBtnComponent extends Component{
   render(){

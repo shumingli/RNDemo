@@ -11,9 +11,9 @@ import {
   Navigator,
 } from 'react-native';
 
-var LoginPage = require('./loginPage.js');
+var LoginPage = require('./res/pages/loginPage.js');
 // var HomePage = require('./homePage.js');
-var MainPage = require('./mainPage.js');
+var MainPage = require('./res/pages/mainPage.js');
 
 export default class ReactNativeDemo extends Component {
   renderScene(route,navigator){

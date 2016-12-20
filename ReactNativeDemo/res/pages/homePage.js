@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('./util.js');
+var Util = require('../utils/util.js');
 
 export default class HomePage extends Component {
 	render(){

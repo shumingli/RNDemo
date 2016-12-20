@@ -1,6 +1,6 @@
 
 /*
- * 我的页
+ * 关注页
  */
 
 import React, { Component } from 'react';
@@ -12,14 +12,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('./util.js');
+var Util = require('../utils/util.js');
 
-export default class MyPage extends Component {
+export default class AttentionPage extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>我的————</Text>
+					<Text>关注————</Text>
 				</View>
 			</View>
 		)
@@ -39,7 +39,7 @@ var styles = StyleSheet.create({
 	},
 });
 
-module.exports = MyPage;
+module.exports = AttentionPage;
 
 
 

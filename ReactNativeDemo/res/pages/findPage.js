@@ -1,6 +1,6 @@
 
 /*
- * 关注页
+ * 发现
  */
 
 import React, { Component } from 'react';
@@ -12,14 +12,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('./util.js');
+var Util = require('../utils/util.js');
 
-export default class AttentionPage extends Component {
+export default class FindPage extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
 				<View style={styles.containerTop}>
-					<Text>关注————</Text>
+					<Text>发现————</Text>
 				</View>
 			</View>
 		)
@@ -39,7 +39,7 @@ var styles = StyleSheet.create({
 	},
 });
 
-module.exports = AttentionPage;
+module.exports = FindPage;
 
 
 
