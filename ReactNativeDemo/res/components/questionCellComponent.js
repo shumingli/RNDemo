@@ -23,10 +23,10 @@ class QuestionCellComponent extends Component {
 			<View style={styles.cellParView}>
 				<View style = {styles.cellView1}>
 					<Image style = {styles.cellUserIcon} source={require('image!my_icon')} />
-					<Text style = {styles.cellUserName}>教育专家</Text>
+					<Text style = {styles.cellUserName}>{this.props.userName}</Text>
 				</View>
 				<View>
-					<Text style = {styles.cellQusText}>为什么教育这么重要为什么教育这么重要为什么教育这么重要为什么教育这么重要?</Text>
+					<Text style = {styles.cellQusText}>{this.props.questionTxt}</Text>
 				</View>
 				<View>
 					<Image style = {styles.cellImg} source={require('image!topic_qusbg')} />

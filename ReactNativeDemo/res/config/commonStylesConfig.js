@@ -3,13 +3,13 @@
  * 样式配置文件
  */
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import {
     Platform,
     StyleSheet,
 } from 'react-native';
  
-class CommonStylesConfig extends Component{ 
+class CommonStylesConfig { 
     static styles = StyleSheet.create({
 		line10sp: {
 		    height: 10, 

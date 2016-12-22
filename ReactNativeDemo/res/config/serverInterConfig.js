@@ -10,7 +10,7 @@ import {
 } from 'react-native';
  
 
-class ServerInterConfig extends Component{ 
+class ServerInterConfig{ 
     //服务器地址
     static serverDomain = "http://localhost:8000/";
     //注册接口
