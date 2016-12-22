@@ -13,6 +13,12 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ReactNativeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeDemoTests.m */; };
+		044C73A51E0AAADF006C524D /* my_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A31E0AAADF006C524D /* my_icon@2x.png */; };
+		044C73A61E0AAADF006C524D /* my_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A41E0AAADF006C524D /* my_icon@3x.png */; };
+		044C73A91E0AB4D6006C524D /* my_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A71E0AB4D6006C524D /* my_forward@2x.png */; };
+		044C73AA1E0AB4D6006C524D /* my_forward3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A81E0AB4D6006C524D /* my_forward3x.png */; };
+		044C73AD1E0AB583006C524D /* my_rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73AB1E0AB583006C524D /* my_rightArrow@2x.png */; };
+		044C73AE1E0AB583006C524D /* my_rightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73AC1E0AB583006C524D /* my_rightArrow@3x.png */; };
 		048721E81E03CFDF0076A74B /* bottom_attention@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048721DA1E03CFDF0076A74B /* bottom_attention@2x.png */; };
 		048721E91E03CFDF0076A74B /* bottom_attention@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048721DB1E03CFDF0076A74B /* bottom_attention@3x.png */; };
 		048721EA1E03CFDF0076A74B /* bottom_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048721DC1E03CFDF0076A74B /* bottom_home@2x.png */; };
@@ -205,6 +211,12 @@
 		00E356EE1AD99517003FC87E /* ReactNativeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeDemoTests.m; sourceTree = "<group>"; };
+		044C73A31E0AAADF006C524D /* my_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_icon@2x.png"; sourceTree = "<group>"; };
+		044C73A41E0AAADF006C524D /* my_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_icon@3x.png"; sourceTree = "<group>"; };
+		044C73A71E0AB4D6006C524D /* my_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_forward@2x.png"; sourceTree = "<group>"; };
+		044C73A81E0AB4D6006C524D /* my_forward3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_forward3x.png; sourceTree = "<group>"; };
+		044C73AB1E0AB583006C524D /* my_rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_rightArrow@2x.png"; sourceTree = "<group>"; };
+		044C73AC1E0AB583006C524D /* my_rightArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_rightArrow@3x.png"; sourceTree = "<group>"; };
 		048721DA1E03CFDF0076A74B /* bottom_attention@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_attention@2x.png"; sourceTree = "<group>"; };
 		048721DB1E03CFDF0076A74B /* bottom_attention@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_attention@3x.png"; sourceTree = "<group>"; };
 		048721DC1E03CFDF0076A74B /* bottom_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_home@2x.png"; sourceTree = "<group>"; };
@@ -338,6 +350,12 @@
 		048721D91E03CFDF0076A74B /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				044C73AB1E0AB583006C524D /* my_rightArrow@2x.png */,
+				044C73AC1E0AB583006C524D /* my_rightArrow@3x.png */,
+				044C73A71E0AB4D6006C524D /* my_forward@2x.png */,
+				044C73A81E0AB4D6006C524D /* my_forward3x.png */,
+				044C73A31E0AAADF006C524D /* my_icon@2x.png */,
+				044C73A41E0AAADF006C524D /* my_icon@3x.png */,
 				048722221E03D4420076A74B /* bottom_attention_sel@2x.png */,
 				048722231E03D4420076A74B /* bottom_attention_sel@3x.png */,
 				048722241E03D4420076A74B /* bottom_home_sel@2x.png */,
@@ -749,11 +767,16 @@
 				048721ED1E03CFDF0076A74B /* bottom_my@3x.png in Resources */,
 				048721EE1E03CFDF0076A74B /* bottom_show@2x.png in Resources */,
 				048722331E03D4420076A74B /* bottom_my_sel@3x.png in Resources */,
+				044C73A51E0AAADF006C524D /* my_icon@2x.png in Resources */,
 				048721E81E03CFDF0076A74B /* bottom_attention@2x.png in Resources */,
 				048722391E03D4420076A74B /* newsdefault@3x.png in Resources */,
+				044C73AA1E0AB4D6006C524D /* my_forward3x.png in Resources */,
+				044C73A91E0AB4D6006C524D /* my_forward@2x.png in Resources */,
+				044C73AE1E0AB583006C524D /* my_rightArrow@3x.png in Resources */,
 				048721F31E03CFDF0076A74B /* share_wechat@3x.png in Resources */,
 				048721EB1E03CFDF0076A74B /* bottom_home@3x.png in Resources */,
 				048721EC1E03CFDF0076A74B /* bottom_my@2x.png in Resources */,
+				044C73AD1E0AB583006C524D /* my_rightArrow@2x.png in Resources */,
 				048722371E03D4420076A74B /* newsclick@3x.png in Resources */,
 				048722321E03D4420076A74B /* bottom_my_sel@2x.png in Resources */,
 				048721F21E03CFDF0076A74B /* share_wechat@2x.png in Resources */,
@@ -765,6 +788,7 @@
 				048722301E03D4420076A74B /* bottom_home_sel@2x.png in Resources */,
 				048721EA1E03CFDF0076A74B /* bottom_home@2x.png in Resources */,
 				048721F51E03CFDF0076A74B /* share_weibo@3x.png in Resources */,
+				044C73A61E0AAADF006C524D /* my_icon@3x.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				048721EF1E03CFDF0076A74B /* bottom_show@3x.png in Resources */,
 				048721F41E03CFDF0076A74B /* share_weibo@2x.png in Resources */,

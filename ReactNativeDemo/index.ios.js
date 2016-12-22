@@ -30,7 +30,7 @@ export default class ReactNativeDemo extends Component {
   render(){
     return(<Navigator 
       style={{flex:1}} 
-      initialRoute={{component:LoginPage}}
+      initialRoute={{component:MainPage}}
       configureScene={this.configureScene}
       renderScene={this.renderScene}/>);
   }
