@@ -11,8 +11,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var TabComponent = require('../components/tabComponent.js');
-
 export default class RememberPage extends Component {
 	onBack = ()=>{
 		this.props.navigator.pop();

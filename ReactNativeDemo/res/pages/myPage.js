@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('../utils/util.js');
+var CommonStylesConfig = require('../config/commonStylesConfig.js');
 var MyPageCellComponent = require('../components/myPageCellComponent.js'); 
 
 export default class MyPage extends Component {
@@ -67,7 +67,7 @@ export default class MyPage extends Component {
 						个人简介个人简介个人简介个人简介个人简介
 						个人简介个人简介个人简介个人简介
 				</Text>
-				<View style = {styles.line1} />
+				<View style = {CommonStylesConfig.styles.line10sp} />
 				<TouchableOpacity onPress = {this._askCellPress}>
 					<MyPageCellComponent 
 						cellImg = {require('image!bottom_my')} 
@@ -100,7 +100,7 @@ export default class MyPage extends Component {
 						hiddenLine = "true"
 						 />
 				</TouchableOpacity>
-				<View style = {[styles.line1,{marginTop: 5}]} />
+				<View style = {[CommonStylesConfig.styles.line10sp,{marginTop: 5}]} />
 				<TouchableOpacity onPress = {this._askCellPress}>
 					<MyPageCellComponent 
 						cellImg = {require('image!bottom_my')} 
@@ -109,7 +109,7 @@ export default class MyPage extends Component {
 						hiddenLine = "true"
 						 />
 				</TouchableOpacity>
-				<View style = {[styles.line1,{marginTop: 5}]} />
+				<View style = {[CommonStylesConfig.styles.line10sp,{marginTop: 5}]} />
 				<TouchableOpacity onPress = {this._askCellPress}>
 					<MyPageCellComponent 
 						cellImg = {require('image!bottom_my')} 
@@ -151,20 +151,6 @@ var styles = StyleSheet.create({
 		fontSize:14,
 		color: '#999999',
 	},
-	line1: {
-	    height: 10, 
-	    marginTop: 10,
-	    marginLeft: 0,
-	    width: Util.ScreenWidth,
-	    backgroundColor: '#eeeeee',
-	},
-	line2: {
-	    height: 1, 
-	    marginTop: 10,
-	    marginLeft: 0,
-	    width: Util.ScreenWidth,
-	    backgroundColor: '#eeeeee',
-	},
 	shortInfo: {
 		fontWeight:'bold',
 		color: '#666666',
@@ -183,9 +169,6 @@ var styles = StyleSheet.create({
 	    marginTop: 10,
 	    marginLeft: 10,
 	    borderRadius: 30, 
-	    alignItems:'center',
-	    justifyContent: 'center', 
-	    backgroundColor:'#1FCAD3',
 	    height: 60,
 	    width: 60,
 	},

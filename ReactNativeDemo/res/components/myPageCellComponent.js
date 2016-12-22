@@ -10,8 +10,6 @@ import {
   View,
 } from 'react-native';
 
-var Util = require('../utils/util.js');
-
 class MyPageCellComponent extends Component {
 	constructor(props){
 	    super(props);
@@ -23,7 +21,7 @@ class MyPageCellComponent extends Component {
 
 	_getLine(){
 		if (!this.props.hiddenLine) {
-			return <View style = {styles.cellLine} />;
+			return <View style = {CommonStylesConfig.styles.line1sp} />;
 		} 
 		return null;
 	}

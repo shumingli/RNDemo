@@ -10,13 +10,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var TabComponent = require('../components/tabComponent.js');
-
-var HttpUtil = require('../utils/httpUtil.js');
 var RegisterPage = require('../pages/registerPage.js');
 var RememberPage = require('../pages/rememberPage.js');
 var RegisterTIView = require('../components/registerTIView.js');
-var PublicConfig = require('../config/publicConfig.js');
 var MainPage = require('../pages/mainPage.js');
 
 class ShareBtnComponent extends Component{
@@ -54,7 +50,7 @@ export default class LoginPage extends Component {
         phoneNumber : this.state.phoneNumber,
         password : this.state.password,
     };
-    HttpUtil.get(PublicConfig.userLogin,params,function (resObj) {
+    HttpUtil.get(ServerInterConfig.userLogin,params,function (resObj) {
         //下面的就是请求来的数据
         if (resObj['code'] == 1) {
             Alert.alert(

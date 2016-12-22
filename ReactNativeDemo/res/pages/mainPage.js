@@ -13,8 +13,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('../utils/util.js');
-var TabComponent = require('../components/tabComponent.js');
+Util = require('../utils/util.js');
+HttpUtil = require('../utils/httpUtil.js');
+ServerInterConfig = require('../config/serverInterConfig.js');
+TabComponent = require('../components/tabComponent.js');
+
 var BottomBar = require('../components/bottomBar.js');
 var HomePage = require('../pages/homePage.js');
 var FindPage = require('../pages/findPage.js');

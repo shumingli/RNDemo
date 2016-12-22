@@ -12,8 +12,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var Util = require('../utils/util.js');
-
 export default class FindPage extends Component {
 	render(){
 		return(

@@ -13,10 +13,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var HttpUtil = require('../utils/httpUtil.js');
 var MainPage = require('../pages/mainPage.js');
-var PublicConfig = require('../config/publicConfig.js');
-var TabComponent = require('../components/tabComponent.js');
 var RegisterTIView = require('../components/registerTIView.js');
 
 export default class RegisterPage extends Component {
@@ -65,7 +62,7 @@ export default class RegisterPage extends Component {
 	        password : this.state.password1,
 	        userName : this.state.userName,
 	    };
-	    HttpUtil.get(PublicConfig.userRegister,params,function (resObj) {
+	    HttpUtil.get(ServerInterConfig.userRegister,params,function (resObj) {
 	        //下面的就是请求来的数据
 	        var code = resObj['code'];
             //做全局处理
