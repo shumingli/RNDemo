@@ -23,6 +23,7 @@ var HomePage = require('../pages/homePage.js');
 var FindPage = require('../pages/findPage.js');
 var AttentionPage = require('../pages/attentionPage.js');
 var MyPage = require('../pages/myPage.js');
+var SearchPage = require('../pages/searchPage.js');
 
 var tabList = ['首页','发现','关注','我的'];
 var viewList = [HomePage,FindPage,AttentionPage,MyPage];
@@ -37,10 +38,18 @@ export default class MainPage extends Component {
 			rightItem : (<Image style={{marginRight: 10}} source={require('image!search_icon')} />),
 		}
 	};
+	_navigate(page,p={},type='Normal'){
+	    this.props.navigator.push({
+	      component: page,
+	      passProps: (p),
+	      type: type
+	    })
+	};
+
 	_onTabPress = (index)=>{
 		console.log(tabList[index-1]);
 		let item;
-		let rightItem = (<Text style={styles.headRightText}></Text>);
+		let rightItem = (<Text style={CommonStylesConfig.styles.tabBarHeadRightText}></Text>);
 		if (index == 1) {
 			item = (<HomePage style={styles.itemStyle} />);
 			rightItem = (<Image style={{marginRight: 10}} source={require('image!search_icon')} />);
@@ -58,7 +67,11 @@ export default class MainPage extends Component {
 			rightItem : rightItem,
 		});
 	};
-
+	
+	_onSearchPress = ()=>{
+	    console.log('SearchPage点击');
+	    this._navigate(SearchPage);
+	};
 	render(){ 
 		return(
 			<View style={styles.container}>
@@ -66,7 +79,8 @@ export default class MainPage extends Component {
 					<TabComponent 
 						style={{flex:54}}
 						title={this.state.title} 
-						rightItem={this.state.rightItem} />
+						rightItem={this.state.rightItem}
+						onRightBtnPress={this._onSearchPress} />
 					<View style={{flex:Util.ScreenHeight-128,justifyContent: 'flex-start',}}>
 						{this.state.item}
 					</View>
@@ -92,13 +106,7 @@ var styles = StyleSheet.create({
 		flex:20,
 		justifyContent: 'flex-start',
 	},
-	headRightText: {
-		color: '#1FCAD3',
-		fontSize: 16,
-		marginRight: 10,
-		textAlign:'right',
-		fontWeight:'bold',
-	},
+	
 });
 
 module.exports = MainPage;

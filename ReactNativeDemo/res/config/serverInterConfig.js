@@ -17,6 +17,9 @@ class ServerInterConfig{
     static userRegister = ServerInterConfig.serverDomain+"blog/userRegister";
     //登录接口
     static userLogin = ServerInterConfig.serverDomain+"blog/userLogin";
+
+    //首页问题、文章列表
+    static topicList = ServerInterConfig.serverDomain+"topic/getTopicList";
 }
 
 module.exports = ServerInterConfig;

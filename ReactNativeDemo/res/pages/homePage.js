@@ -16,8 +16,8 @@ import {
 } from 'react-native';
 
 CommonStylesConfig = require('../config/commonStylesConfig.js');
-var QuestionCellComponent = require('../components/questionCellComponent.js');
-var QuestionModel = require('../models/questionModel.js');
+var TopicCellComponent = require('../components/topicCellComponent.js');
+var TopicModel = require('../models/topicModel.js');
 
 export default class HomePage extends Component {
 	constructor(props){
@@ -25,26 +25,57 @@ export default class HomePage extends Component {
 		const ds = new ListView.DataSource({
 			rowHasChanged:(r1,r2)=>r1 !== r2
 		});
-		this._data = [
-				new QuestionModel('张三1'),
-				new QuestionModel('李四2'),
-				new QuestionModel('小果果3'),
-				new QuestionModel('李四4'),
-				new QuestionModel('张三5'),
-		]; 
+		this._data = []; 
 		this.state = {
 			dataSource: ds.cloneWithRows(this._data),
-			isLoadingMore : false,
+			isLoadingMore: false,
+			curIndex: 0,
 		};
-		
-	}
-// onEndReachedThreshold，在滚动即将到达底部时触发； 
-// 2）onEndReached，在已经到达底部时触发；
-	_renderRow(rowData){
-
+		this._loadMoreData = this._loadMoreData.bind(this);
+		this._toEnd = this._toEnd.bind(this);
+		this._loadMoreData();
 	}
 
+	componentDidMount(){
+		// this._loadMoreData();
+	}
+
+
+	_loadMoreData(){
+		var self = this;
+		self.setState['isLoadingMore'] = true;
+		let params = {
+	        userId : '1',
+	        index: this.state.curIndex,
+	    };
+		HttpUtil.get(ServerInterConfig.topicList,params,function (resObj) {
+	        //下面的就是请求来的数据
+	        if (resObj['code'] == 1) {
+	        	dataArray = resObj['data'];
+	        	var newData = [];
+	        	for (var i = 0; i < dataArray.length; i++) {
+	        		var item = dataArray[i];
+	        		console.log("返回数据：");
+	        		console.log(item);
+	        		var model = new TopicModel(item);
+	        		newData[i] = model;
+	        	};
+	        	self._data = self._data.concat(newData);
+				
+				self.setState({
+				    dataSource: self.state.dataSource.cloneWithRows(self._data),
+					isLoadingMore: false,
+					curIndex: self._data.length,
+				});
+	        } 
+	    })
+	}
+
+	// onEndReachedThreshold，在滚动即将到达底部时触发； 
+	// onEndReached，在已经到达底部时触发；
 	_toEnd() {
+		console.log("toEnd() --> ");
+		var self = this;
           // const { reducer } = this.props;
           // //ListView滚动到底部，根据是否正在加载更多 是否正在刷新 是否已加载全部来判断是否执行加载更多
           // if (reducer.isLoadingMore 
@@ -61,52 +92,29 @@ export default class HomePage extends Component {
 		} 
 		InteractionManager.runAfterInteractions(() => {
             console.log("触发加载更多 toEnd() --> ");
-            var newData = [
-            	new QuestionModel('李四6'),
-				new QuestionModel('小果果7'),
-				new QuestionModel('李四8'),
-				new QuestionModel('张三9'),
-				new QuestionModel('李四10'),
-				// new QuestionModel('小果果11'),
-				// new QuestionModel('李四12'),
-				// new QuestionModel('小果果13'),
-				// new QuestionModel('李四  14'),
-				// new QuestionModel('小果果 15'),
-				// new QuestionModel('李四  16'),
-			];
-
-			this._data = this._data.concat(newData);
-			console.log(this._data);
-			this.setState({
-			    dataSource: this.state.dataSource.cloneWithRows(this._data),
-				isLoadingMore: true,
-			});
+			self._loadMoreData();
         });
-		
-		
-     }
-
-	// _onDataArrived = (newData) => {
-	//   this._data = this._data.concat(newData);
-	//   this.setState({
-	//     dataSource: this.state.dataSource.cloneWithRows(this._data)
-	//   });
-	// };
+    }
+   //  _renderRow = (rowData)=>{
+   //  	return <TopicCellComponent 
+			// userName = {rowData.userName}
+			// questionTxt = {rowData.topicDes}  />
+   //  }
+    _renderRow(rowData){
+    	return <TopicCellComponent 
+			topicModel = {rowData}  />
+		  
+    }
 	// http://www.jianshu.com/p/dff750d8c425
-	
 	render(){
 		return(
 			<View style={styles.container}>
 				<ListView 
-					dataSource={this.state.dataSource}
-					renderRow={(rowData) => 
-						<QuestionCellComponent 
-							userName={rowData.userName}
-							questionTxt={rowData.questionDes}  />}
-					onEndReached={ this._toEnd.bind(this) }
-						
-					
-				 />
+					dataSource = {this.state.dataSource}
+					renderRow = {this._renderRow.bind(this) }
+					onEndReached = { this._toEnd }
+					onEndReachedThreshold  = {50}
+					enableEmptySections = {true}  />
 			</View>
 		)
 	}

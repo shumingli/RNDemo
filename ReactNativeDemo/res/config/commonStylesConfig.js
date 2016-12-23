@@ -25,6 +25,13 @@ class CommonStylesConfig {
 		    width: Util.ScreenWidth,
 		    backgroundColor: '#eeeeee',
 		},
+		tabBarHeadRightText: {
+			color: '#1FCAD3',
+			fontSize: 16,
+			marginRight: 10,
+			textAlign:'right',
+			fontWeight:'bold',
+		},
 	});
 }
 

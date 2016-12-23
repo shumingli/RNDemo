@@ -92,7 +92,7 @@ export default class LoginPage extends Component {
       <View style={styles.container}>
         <TabComponent 
             title='登录' 
-            rightBtnTitle='注册' 
+            rightItem={<Text style={CommonStylesConfig.styles.tabBarHeadRightText}>注册</Text>} 
             onRightBtnPress={this._onRegisterPress} />
         <View style={styles.phonePreView}>
           <Image style={styles.contactIcon} source={require('image!login_contact_icon')} />
