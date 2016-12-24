@@ -6,35 +6,86 @@ import React, { Component } from 'react';
 import {
     AppRegistry,
     Platform,
-    AsyncStorage
+    AsyncStorage,
+    NetInfo,
+    Alert,
 } from 'react-native';
+
+const requestTypeGet = 'get';
+const requestTypePost = 'post';
+
+const NOT_NETWORK = "网络不可用，请稍后再试";
  
 class HttpUtil extends React.Component{
-    /*
-     *  get请求
-     *  url:请求地址
-     *  data:参数
-     *  callback:回调函数
-     * */
+
+    /***
+     * 检查网络链接状态
+     * @param callback
+     */
+    static checkNetworkState(callback){
+        NetInfo.isConnected.fetch().done(
+            (isConnected) => {
+                callback(isConnected);
+            }
+        );
+    }
+    /***
+     * 网络请求
+     * @param  type
+     * @param  url:请求地址
+     * @param  data:参数
+     * @param  callback:回调函数
+     */
+    static request(type,url,params,callback){
+        NetInfo.fetch().done((status)=> {
+            console.log('StatusStatus:'+status);
+        });
+        if (type == HttpUtil.requestTypeGet) {
+                    HttpUtil.get(url,params,callback);
+                } else{
+                    HttpUtil.post(url,params,callback);
+                };
+
+        // HttpUtil.checkNetworkState((isConnected)=>{
+        //     if (isConnected) {
+        //         if (type == HttpUtil.requestTypeGet) {
+        //             HttpUtil.get(url,params,callback);
+        //         } else{
+        //             HttpUtil.post(url,params,callback);
+        //         };
+        //     }else{
+        //         console.log('网络连接状态：');
+        //         console.log(isConnected);
+        //         Alert.alert('提示','网络连接失败，请稍后重试');
+        //     }
+        // });
+    }
+
+    /***
+     * get请求
+     * @param  url:请求地址
+     * @param  data:参数
+     * @param  callback:回调函数
+     */
     static get(url,params,callback){
         if (params) {
             let paramsArray = [];
             //拼接参数
             Object.keys(params).forEach(key => paramsArray.push(key + '=' + params[key]))
-                if (url.search(/\?/) === -1) {
-                    url += '?' + paramsArray.join('&')
-                } else {
-                    url += '&' + paramsArray.join('&')
-                }
+            if (url.search(/\?/) === -1) {
+                url += '?' + paramsArray.join('&')
+            } else {
+                url += '&' + paramsArray.join('&')
             }
-            //fetch请求
+              //fetch请求
             fetch(url,{
                 method: 'GET',
-            }).then((response) => response.json())
+            })
+            .then((response) => response.json())
             .then((responseJSON) => {
                 console.log('返回数据');
                 let resObj = JSON.parse(responseJSON);
-                console.log(responseJSON);
+                // console.log(responseJSON);
                 var code = resObj['code'];
                 //做全局处理
                 if (code == 1) {
@@ -46,13 +97,14 @@ class HttpUtil extends React.Component{
             }).catch((error) => {
                 console.error(error);
             });
+        }
     }
-    /*
-     *  post请求
-     *  url:请求地址
-     *  data:参数
-     *  callback:回调函数
-     * */
+    /***
+     * post请求
+     * @param  url:请求地址
+     * @param  data:参数
+     * @param  callback:回调函数
+     */
     static post(url,params,callback){
         //fetch请求
         fetch(url,{

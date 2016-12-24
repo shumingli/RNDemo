@@ -31,15 +31,14 @@ export default class HomePage extends Component {
 			isLoadingMore: false,
 			curIndex: 0,
 		};
+
 		this._loadMoreData = this._loadMoreData.bind(this);
-		this._toEnd = this._toEnd.bind(this);
 		this._loadMoreData();
 	}
 
 	componentDidMount(){
 		// this._loadMoreData();
 	}
-
 
 	_loadMoreData(){
 		var self = this;
@@ -48,7 +47,7 @@ export default class HomePage extends Component {
 	        userId : '1',
 	        index: this.state.curIndex,
 	    };
-		HttpUtil.get(ServerInterConfig.topicList,params,function (resObj) {
+		HttpUtil.request(HttpUtil.requestTypeGet,ServerInterConfig.topicList,params,function (resObj) {
 	        //下面的就是请求来的数据
 	        if (resObj['code'] == 1) {
 	        	dataArray = resObj['data'];
@@ -95,11 +94,6 @@ export default class HomePage extends Component {
 			self._loadMoreData();
         });
     }
-   //  _renderRow = (rowData)=>{
-   //  	return <TopicCellComponent 
-			// userName = {rowData.userName}
-			// questionTxt = {rowData.topicDes}  />
-   //  }
     _renderRow(rowData){
     	return <TopicCellComponent 
 			topicModel = {rowData}  />
@@ -112,7 +106,7 @@ export default class HomePage extends Component {
 				<ListView 
 					dataSource = {this.state.dataSource}
 					renderRow = {this._renderRow.bind(this) }
-					onEndReached = { this._toEnd }
+					onEndReached = { this._toEnd.bind(this) }
 					onEndReachedThreshold  = {50}
 					enableEmptySections = {true}  />
 			</View>
