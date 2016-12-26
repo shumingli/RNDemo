@@ -32,6 +32,17 @@ class CommonStylesConfig {
 			textAlign:'right',
 			fontWeight:'bold',
 		},
+		backImg: {
+			marginLeft: 10,
+
+		},
+		backText: {
+			color: '#000000',
+			fontSize: 22,
+			fontWeight:'bold',
+			marginLeft: 10,
+		},
+
 	});
 }
 

@@ -18,10 +18,12 @@
 function TopicModel (serverDic){
 	this.topicId = serverDic.topicId;
 	this.userId = serverDic.user_id;
-	this.userName = '测试名';
+	this.topicTypeName = serverDic.topicTypeName;
+	this.topicTypeImg = serverDic.topicTypeImg;
+	// this.topicTypeImg = 'http://7xj11m.com1.z0.glb.clouddn.com/FuyyEJZN4nyyS7-GpGFMtDq3-Tld';
 	this.userIconUrl = serverDic.img;
 	this.topicDes = serverDic.topicDes;
-	this.quesImg = serverDic.topicId;
+	this.quesImg = serverDic.img;
 	this.attentionNum = serverDic.attentionNum;
 	this.answerNum = serverDic.answerNum;
 	this.topicType_id = serverDic.topicType_id;  //所属分类
@@ -40,3 +42,14 @@ function TopicModel (serverDic){
 
 
 module.exports = TopicModel;
+
+
+
+
+
+
+
+
+
+
+

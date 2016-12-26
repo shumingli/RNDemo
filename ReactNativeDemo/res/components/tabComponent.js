@@ -24,7 +24,8 @@ export default class TabComponent extends Component {
 	          <TouchableOpacity 
 	            style={styles.navigatorLeftItem}
 	            onPress={this.props.onLeftBtnPress} >
-	            <Text style={styles.headLeftText}> {this.props.leftBtnTitle} </Text>
+	            {this.props.leftItem}
+	            
 	          </TouchableOpacity>
 	          <View style={styles.navigatorTitleItem}>
 	    		 <Text style={styles.headText}>{this.props.title}</Text>
@@ -73,12 +74,7 @@ const styles = StyleSheet.create({
 		fontSize: 22,
 		fontWeight:'bold',
 	},
-	headLeftText: {
-		color: '#000000',
-		fontSize: 22,
-		fontWeight:'bold',
-		marginLeft: 10,
-	},
+	
 	
 });
 

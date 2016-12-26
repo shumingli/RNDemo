@@ -37,3 +37,30 @@ export default class ReactNativeDemo extends Component {
 }
 
 AppRegistry.registerComponent('ReactNativeDemo', () => ReactNativeDemo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

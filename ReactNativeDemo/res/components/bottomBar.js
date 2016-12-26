@@ -82,28 +82,32 @@ export default class BottomBar extends Component {
         <View style={styles.barLine} />
         <View style={styles.heading}> 
           <TouchableOpacity 
-            style={styles.bottomItem}
-            onPress={this._selectHome} >
-            <Image source={this.state.homeIcon}></Image>
-            <Text style={this.state.homeStyle}> 首页 </Text>
+            activeOpacity = {1}
+            style = {styles.bottomItem}
+            onPress = {this._selectHome} >
+            <Image source = {this.state.homeIcon} />
+            <Text style = {this.state.homeStyle}> 首页 </Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            style={styles.bottomItem}
-            onPress={this._selectFind} >
-            <Image source={this.state.findIcon}></Image>
-            <Text style={this.state.findStyle}> 发现 </Text>
+            activeOpacity = {1}
+            style = {styles.bottomItem}
+            onPress = {this._selectFind} >
+            <Image source = {this.state.findIcon} />
+            <Text style = {this.state.findStyle}> 发现 </Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.bottomItem}
-            onPress={this._selectAttention} >
-            <Image source={this.state.attentionIcon}></Image>
-            <Text style={this.state.attentionStyle}> 关注 </Text>
+          <TouchableOpacity
+            activeOpacity = {1} 
+            style = {styles.bottomItem}
+            onPress = {this._selectAttention} >
+            <Image source = {this.state.attentionIcon}></Image>
+            <Text style = {this.state.attentionStyle}> 关注 </Text>
           </TouchableOpacity>
-          <TouchableOpacity 
-            style={styles.bottomItem}
-            onPress={this._selectMy} >
-            <Image source={this.state.myIcon}></Image>
-            <Text style={this.state.myStyle}> 我的 </Text>
+          <TouchableOpacity
+            activeOpacity = {1} 
+            style = {styles.bottomItem}
+            onPress = {this._selectMy} >
+            <Image source = {this.state.myIcon} />
+            <Text style = {this.state.myStyle}> 我的 </Text>
           </TouchableOpacity>
       </View>
         

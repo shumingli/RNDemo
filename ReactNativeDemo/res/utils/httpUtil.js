@@ -11,9 +11,6 @@ import {
     Alert,
 } from 'react-native';
 
-const requestTypeGet = 'get';
-const requestTypePost = 'post';
-
 const NOT_NETWORK = "网络不可用，请稍后再试";
  
 class HttpUtil extends React.Component{
@@ -38,17 +35,17 @@ class HttpUtil extends React.Component{
      */
     static request(type,url,params,callback){
         NetInfo.fetch().done((status)=> {
-            console.log('StatusStatus:'+status);
+            console.log('StatusStatus:'+type);
         });
-        if (type == HttpUtil.requestTypeGet) {
-                    HttpUtil.get(url,params,callback);
-                } else{
-                    HttpUtil.post(url,params,callback);
-                };
+        if (type == 'get') {
+            HttpUtil.get(url,params,callback);
+        } else{
+            HttpUtil.post(url,params,callback);
+        };
 
         // HttpUtil.checkNetworkState((isConnected)=>{
         //     if (isConnected) {
-        //         if (type == HttpUtil.requestTypeGet) {
+        //         if (type == 'get') {
         //             HttpUtil.get(url,params,callback);
         //         } else{
         //             HttpUtil.post(url,params,callback);

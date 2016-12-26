@@ -50,7 +50,7 @@ export default class LoginPage extends Component {
         phoneNumber : this.state.phoneNumber,
         password : this.state.password,
     };
-    HttpUtil.request(HttpUtil.requestTypeGet,ServerInterConfig.userLogin,params,function (resObj) {
+    HttpUtil.request('get',ServerInterConfig.userLogin,params,function (resObj) {
         //下面的就是请求来的数据
         if (resObj['code'] == 1) {
             Alert.alert(

@@ -1,6 +1,6 @@
-/*
-* 搜索界面
-*/
+/***
+ * 底部工具条
+ */
 
 import React, { Component } from 'react';
 import {
@@ -18,10 +18,7 @@ export default class SearchPage extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
-				<TabComponent 
-					title='搜索' 
-					leftItem={ComponentConfig.backImage}
-					onLeftBtnPress={this.onBack} />
+				
 			</View>
 		);
 	}

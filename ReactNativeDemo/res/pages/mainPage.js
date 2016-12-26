@@ -15,8 +15,12 @@ import {
 
 Util = require('../utils/util.js');
 HttpUtil = require('../utils/httpUtil.js');
+ColorsConfig = require('../config/colorsConfig.js');
 ServerInterConfig = require('../config/serverInterConfig.js');
+CommonStylesConfig = require('../config/commonStylesConfig.js');
 TabComponent = require('../components/tabComponent.js');
+BaseNavigatePage = require('../pages/baseNavigatePage.js');
+ComponentConfig = require('../config/componentConfig.js');
 
 var BottomBar = require('../components/bottomBar.js');
 var HomePage = require('../pages/homePage.js');
@@ -28,22 +32,18 @@ var SearchPage = require('../pages/searchPage.js');
 var tabList = ['首页','发现','关注','我的'];
 var viewList = [HomePage,FindPage,AttentionPage,MyPage];
 
-export default class MainPage extends Component {
+
+
+
+export default class MainPage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
 		this.state = {
 			title : tabList[0],
 			selectIndex : 1,
-			item : (<HomePage style={styles.itemStyle} />),
+			item : (<HomePage navigator={this.props.navigator} style={styles.itemStyle} />),
 			rightItem : (<Image style={{marginRight: 10}} source={require('image!search_icon')} />),
 		}
-	};
-	_navigate(page,p={},type='Normal'){
-	    this.props.navigator.push({
-	      component: page,
-	      passProps: (p),
-	      type: type
-	    })
 	};
 
 	_onTabPress = (index)=>{
@@ -51,14 +51,14 @@ export default class MainPage extends Component {
 		let item;
 		let rightItem = (<Text style={CommonStylesConfig.styles.tabBarHeadRightText}></Text>);
 		if (index == 1) {
-			item = (<HomePage style={styles.itemStyle} />);
+			item = (<HomePage navigator={this.props.navigator} style={styles.itemStyle} />);
 			rightItem = (<Image style={{marginRight: 10}} source={require('image!search_icon')} />);
 		}else if(index == 2){
-			item = (<FindPage style={styles.itemStyle} />);
+			item = (<FindPage navigator={this.props.navigator} style={styles.itemStyle} />);
 		}else if(index == 3){
-			item = (<AttentionPage style={styles.itemStyle} />);
+			item = (<AttentionPage navigator={this.props.navigator} style={styles.itemStyle} />);
 		}else{
-			item = (<MyPage style={styles.itemStyle} />);
+			item = (<MyPage navigator={this.props.navigator} style={styles.itemStyle} />);
 		};
 		this.setState({
 			title : tabList[index-1],

@@ -12,7 +12,7 @@ import {
 
 class ServerInterConfig{ 
     //服务器地址
-    static serverDomain = "http://192.168.1.151:8000/";
+    static serverDomain = "http://192.168.1.143:8000/";
     // static serverDomain = "http://localhost:8000/";
     //注册接口
     static userRegister = ServerInterConfig.serverDomain+"blog/userRegister";
@@ -20,7 +20,38 @@ class ServerInterConfig{
     static userLogin = ServerInterConfig.serverDomain+"blog/userLogin";
 
     //首页问题、文章列表
-    static topicList = ServerInterConfig.serverDomain+"topic/getTopicList";
+    static topicList = ServerInterConfig.serverDomain+"topic/getChosenTopicList";
 }
 
 module.exports = ServerInterConfig;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,35 +8,46 @@ import {
   Text,
   Image,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
 class TopicCellComponent extends Component {
 	constructor(props){
 	    super(props);
 	    this.state = {
-	       
+	       typeIcon : {uri:this.props.topicModel.topicTypeImg},
+	       contentImg : {uri:this.props.topicModel.quesImg},
 	    }
+	    console.log(this.state.img);
 	}
 
 	render(){
 		return(
 			<View style={styles.cellParView}>
-				<View style = {styles.cellView1}>
-					<Image style = {styles.cellUserIcon} source={require('image!my_icon')} />
-					<Text style = {styles.cellUserName}>{this.props.topicModel.userName}</Text>
-				</View>
-				<View>
-					<Text style = {styles.cellQusText}>{this.props.topicModel.topicDes}</Text>
-				</View>
-				<View>
-					<Image style = {styles.cellImg} source={require('image!topic_qusbg')} />
-				</View>
-				<View style = {styles.cellView1}>
-					<Text style = {[styles.cellAttenQus,{flex:1}]}>{this.props.topicModel.attentionNum}人关注，{this.props.topicModel.answerNum}人回答</Text>
-					<View style = {{alignItems:'flex-end',flex:1}}>
-						<Text style = {[styles.cellAttenQus,{marginRight:10}]}>文章</Text>
+				<TouchableOpacity activeOpacity = {0.8} onPress={this.props.onTopicIconPress}>
+					<View style = {styles.cellView1}>
+						<Image 
+							style = {styles.cellUserIcon} 
+							source = {this.state.typeIcon}
+							resizeMode = 'contain' />
+							  
+						<Text style = {styles.cellUserName}>来自话题：{this.props.topicModel.topicTypeName}</Text>
 					</View>
-				</View>
+				</TouchableOpacity>
+				<TouchableOpacity activeOpacity = {0.8} onPress={this.props.onTopicCellPress}>
+					<View>
+						<Text style = {styles.cellQusText}>{this.props.topicModel.topicDes}</Text>
+					</View>
+					<View>
+						<Image style = {styles.cellImg} source={this.state.contentImg} />
+					</View>
+					<View style = {styles.cellView1}>
+						<Text style = {[styles.cellAttenQus,{flex:1}]}>{this.props.topicModel.attentionNum}人关注，{this.props.topicModel.answerNum}人回答</Text>
+						<View style = {{alignItems:'flex-end',flex:1}}>
+							<Text style = {[styles.cellAttenQus,{marginRight:10}]}>文章</Text>
+						</View>
+					</View>
+				</TouchableOpacity>
 				<View style = {CommonStylesConfig.styles.line10sp} />
 			</View>
 		);

@@ -15,11 +15,11 @@ import {
   InteractionManager,
 } from 'react-native';
 
-CommonStylesConfig = require('../config/commonStylesConfig.js');
 var TopicCellComponent = require('../components/topicCellComponent.js');
 var TopicModel = require('../models/topicModel.js');
+var TopicDetailPage = require('../pages/topicDetailPage.js');
 
-export default class HomePage extends Component {
+export default class HomePage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
 		const ds = new ListView.DataSource({
@@ -47,7 +47,7 @@ export default class HomePage extends Component {
 	        userId : '1',
 	        index: this.state.curIndex,
 	    };
-		HttpUtil.request(HttpUtil.requestTypeGet,ServerInterConfig.topicList,params,function (resObj) {
+		HttpUtil.request('get',ServerInterConfig.topicList,params,function (resObj) {
 	        //下面的就是请求来的数据
 	        if (resObj['code'] == 1) {
 	        	dataArray = resObj['data'];
@@ -94,8 +94,19 @@ export default class HomePage extends Component {
 			self._loadMoreData();
         });
     }
+    _onTopicIconPress(rowData){
+    	console.log('tttt');
+    	console.log(rowData.topicId);
+    	this._navigate(TopicDetailPage);
+    }
+    _onTopicCellPress(rowData){
+    	console.log(rowData.topicId);
+    	this._navigate(TopicDetailPage);
+    }
     _renderRow(rowData){
     	return <TopicCellComponent 
+    		onTopicIconPress = {this._onTopicIconPress.bind(this,rowData)}
+    		onTopicCellPress = {this._onTopicCellPress.bind(this,rowData)}
 			topicModel = {rowData}  />
 		  
     }
