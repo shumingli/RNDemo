@@ -19,6 +19,8 @@ var TopicCellComponent = require('../components/topicCellComponent.js');
 var TopicModel = require('../models/topicModel.js');
 var TopicDetailPage = require('../pages/topicDetailPage.js');
 
+var TestPage = require('../pages/testPage.js');
+
 export default class HomePage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
@@ -97,7 +99,7 @@ export default class HomePage extends BaseNavigatePage {
     _onTopicIconPress(rowData){
     	console.log('tttt');
     	console.log(rowData.topicId);
-    	this._navigate(TopicDetailPage);
+    	this._navigate(TestPage);
     }
     _onTopicCellPress(rowData){
     	console.log(rowData.topicId);

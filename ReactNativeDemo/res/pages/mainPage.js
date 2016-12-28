@@ -33,8 +33,6 @@ var tabList = ['首页','发现','关注','我的'];
 var viewList = [HomePage,FindPage,AttentionPage,MyPage];
 
 
-
-
 export default class MainPage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
@@ -66,6 +64,8 @@ export default class MainPage extends BaseNavigatePage {
 			item : item,
 			rightItem : rightItem,
 		});
+
+
 	};
 	
 	_onSearchPress = ()=>{

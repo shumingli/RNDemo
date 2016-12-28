@@ -18,7 +18,6 @@ class TopicCellComponent extends Component {
 	       typeIcon : {uri:this.props.topicModel.topicTypeImg},
 	       contentImg : {uri:this.props.topicModel.quesImg},
 	    }
-	    console.log(this.state.img);
 	}
 
 	render(){

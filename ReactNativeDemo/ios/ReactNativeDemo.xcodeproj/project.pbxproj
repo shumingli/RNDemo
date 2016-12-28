@@ -13,6 +13,8 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ReactNativeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeDemoTests.m */; };
+		0424AAB71E135D560014A0FF /* topicType_icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0424AAB51E135D560014A0FF /* topicType_icon1@2x.png */; };
+		0424AAB81E135D560014A0FF /* topicType_icon1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0424AAB61E135D560014A0FF /* topicType_icon1@3x.png */; };
 		044C73A51E0AAADF006C524D /* my_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A31E0AAADF006C524D /* my_icon@2x.png */; };
 		044C73A61E0AAADF006C524D /* my_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A41E0AAADF006C524D /* my_icon@3x.png */; };
 		044C73A91E0AB4D6006C524D /* my_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C73A71E0AB4D6006C524D /* my_forward@2x.png */; };
@@ -51,6 +53,16 @@
 		048722371E03D4420076A74B /* newsclick@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0487222B1E03D4420076A74B /* newsclick@3x.png */; };
 		048722381E03D4420076A74B /* newsdefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0487222C1E03D4420076A74B /* newsdefault@2x.png */; };
 		048722391E03D4420076A74B /* newsdefault@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0487222D1E03D4420076A74B /* newsdefault@3x.png */; };
+		04E5B9621E12341100E1990F /* topic_assent_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B9581E12341100E1990F /* topic_assent_sel@2x.png */; };
+		04E5B9631E12341100E1990F /* topic_assent_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B9591E12341100E1990F /* topic_assent_sel@3x.png */; };
+		04E5B9641E12341100E1990F /* topic_assent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95A1E12341100E1990F /* topic_assent@2x.png */; };
+		04E5B9651E12341100E1990F /* topic_assent@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95B1E12341100E1990F /* topic_assent@3x.png */; };
+		04E5B9661E12341100E1990F /* topic_collect_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95C1E12341100E1990F /* topic_collect_sel@2x.png */; };
+		04E5B9671E12341100E1990F /* topic_collect_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95D1E12341100E1990F /* topic_collect_sel@3x.png */; };
+		04E5B9681E12341100E1990F /* topic_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95E1E12341100E1990F /* topic_collect@2x.png */; };
+		04E5B9691E12341100E1990F /* topic_collect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B95F1E12341100E1990F /* topic_collect@3x.png */; };
+		04E5B96A1E12341100E1990F /* topic_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B9601E12341100E1990F /* topic_comment@2x.png */; };
+		04E5B96B1E12341100E1990F /* topic_comment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E5B9611E12341100E1990F /* topic_comment@3x.png */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -217,6 +229,8 @@
 		00E356EE1AD99517003FC87E /* ReactNativeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeDemoTests.m; sourceTree = "<group>"; };
+		0424AAB51E135D560014A0FF /* topicType_icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topicType_icon1@2x.png"; sourceTree = "<group>"; };
+		0424AAB61E135D560014A0FF /* topicType_icon1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topicType_icon1@3x.png"; sourceTree = "<group>"; };
 		044C73A31E0AAADF006C524D /* my_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_icon@2x.png"; sourceTree = "<group>"; };
 		044C73A41E0AAADF006C524D /* my_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_icon@3x.png"; sourceTree = "<group>"; };
 		044C73A71E0AB4D6006C524D /* my_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_forward@2x.png"; sourceTree = "<group>"; };
@@ -255,6 +269,16 @@
 		0487222B1E03D4420076A74B /* newsclick@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsclick@3x.png"; sourceTree = "<group>"; };
 		0487222C1E03D4420076A74B /* newsdefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsdefault@2x.png"; sourceTree = "<group>"; };
 		0487222D1E03D4420076A74B /* newsdefault@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsdefault@3x.png"; sourceTree = "<group>"; };
+		04E5B9581E12341100E1990F /* topic_assent_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_assent_sel@2x.png"; sourceTree = "<group>"; };
+		04E5B9591E12341100E1990F /* topic_assent_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_assent_sel@3x.png"; sourceTree = "<group>"; };
+		04E5B95A1E12341100E1990F /* topic_assent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_assent@2x.png"; sourceTree = "<group>"; };
+		04E5B95B1E12341100E1990F /* topic_assent@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_assent@3x.png"; sourceTree = "<group>"; };
+		04E5B95C1E12341100E1990F /* topic_collect_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_collect_sel@2x.png"; sourceTree = "<group>"; };
+		04E5B95D1E12341100E1990F /* topic_collect_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_collect_sel@3x.png"; sourceTree = "<group>"; };
+		04E5B95E1E12341100E1990F /* topic_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_collect@2x.png"; sourceTree = "<group>"; };
+		04E5B95F1E12341100E1990F /* topic_collect@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_collect@3x.png"; sourceTree = "<group>"; };
+		04E5B9601E12341100E1990F /* topic_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_comment@2x.png"; sourceTree = "<group>"; };
+		04E5B9611E12341100E1990F /* topic_comment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topic_comment@3x.png"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ReactNativeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,6 +386,18 @@
 		048721D91E03CFDF0076A74B /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				0424AAB51E135D560014A0FF /* topicType_icon1@2x.png */,
+				0424AAB61E135D560014A0FF /* topicType_icon1@3x.png */,
+				04E5B9581E12341100E1990F /* topic_assent_sel@2x.png */,
+				04E5B9591E12341100E1990F /* topic_assent_sel@3x.png */,
+				04E5B95A1E12341100E1990F /* topic_assent@2x.png */,
+				04E5B95B1E12341100E1990F /* topic_assent@3x.png */,
+				04E5B95C1E12341100E1990F /* topic_collect_sel@2x.png */,
+				04E5B95D1E12341100E1990F /* topic_collect_sel@3x.png */,
+				04E5B95E1E12341100E1990F /* topic_collect@2x.png */,
+				04E5B95F1E12341100E1990F /* topic_collect@3x.png */,
+				04E5B9601E12341100E1990F /* topic_comment@2x.png */,
+				04E5B9611E12341100E1990F /* topic_comment@3x.png */,
 				044C73B71E0E634D006C524D /* back@2x.png */,
 				044C73B81E0E634D006C524D /* back@3x.png */,
 				044C73B31E0BA38A006C524D /* topic_qusbg@2x.png */,
@@ -781,10 +817,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				048722361E03D4420076A74B /* newsclick@2x.png in Resources */,
+				04E5B96B1E12341100E1990F /* topic_comment@3x.png in Resources */,
 				0487222F1E03D4420076A74B /* bottom_attention_sel@3x.png in Resources */,
 				048721ED1E03CFDF0076A74B /* bottom_my@3x.png in Resources */,
 				044C73B11E0B89EA006C524D /* search_icon@2x.png in Resources */,
 				048721EE1E03CFDF0076A74B /* bottom_show@2x.png in Resources */,
+				0424AAB81E135D560014A0FF /* topicType_icon1@3x.png in Resources */,
 				048722331E03D4420076A74B /* bottom_my_sel@3x.png in Resources */,
 				044C73A51E0AAADF006C524D /* my_icon@2x.png in Resources */,
 				048721E81E03CFDF0076A74B /* bottom_attention@2x.png in Resources */,
@@ -793,10 +831,12 @@
 				044C73BA1E0E634D006C524D /* back@3x.png in Resources */,
 				044C73AA1E0AB4D6006C524D /* my_forward3x.png in Resources */,
 				044C73A91E0AB4D6006C524D /* my_forward@2x.png in Resources */,
+				04E5B96A1E12341100E1990F /* topic_comment@2x.png in Resources */,
 				044C73AE1E0AB583006C524D /* my_rightArrow@3x.png in Resources */,
 				048721F31E03CFDF0076A74B /* share_wechat@3x.png in Resources */,
 				048721EB1E03CFDF0076A74B /* bottom_home@3x.png in Resources */,
 				048721EC1E03CFDF0076A74B /* bottom_my@2x.png in Resources */,
+				04E5B9641E12341100E1990F /* topic_assent@2x.png in Resources */,
 				044C73AD1E0AB583006C524D /* my_rightArrow@2x.png in Resources */,
 				048722371E03D4420076A74B /* newsclick@3x.png in Resources */,
 				048722321E03D4420076A74B /* bottom_my_sel@2x.png in Resources */,
@@ -804,22 +844,30 @@
 				048721F21E03CFDF0076A74B /* share_wechat@2x.png in Resources */,
 				048722311E03D4420076A74B /* bottom_home_sel@3x.png in Resources */,
 				048722341E03D4420076A74B /* bottom_show_sel@2x.png in Resources */,
+				04E5B9681E12341100E1990F /* topic_collect@2x.png in Resources */,
 				048722381E03D4420076A74B /* newsdefault@2x.png in Resources */,
 				048722351E03D4420076A74B /* bottom_show_sel@3x.png in Resources */,
 				0487222E1E03D4420076A74B /* bottom_attention_sel@2x.png in Resources */,
 				048722301E03D4420076A74B /* bottom_home_sel@2x.png in Resources */,
+				04E5B9651E12341100E1990F /* topic_assent@3x.png in Resources */,
 				044C73B61E0BA38A006C524D /* topic_qusbg@3x.png in Resources */,
 				048721EA1E03CFDF0076A74B /* bottom_home@2x.png in Resources */,
 				048721F51E03CFDF0076A74B /* share_weibo@3x.png in Resources */,
 				044C73A61E0AAADF006C524D /* my_icon@3x.png in Resources */,
+				04E5B9661E12341100E1990F /* topic_collect_sel@2x.png in Resources */,
+				0424AAB71E135D560014A0FF /* topicType_icon1@2x.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				048721EF1E03CFDF0076A74B /* bottom_show@3x.png in Resources */,
+				04E5B9691E12341100E1990F /* topic_collect@3x.png in Resources */,
 				048721F41E03CFDF0076A74B /* share_weibo@2x.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				048721F01E03CFDF0076A74B /* login_contact_icon@2x.png in Resources */,
 				048721E91E03CFDF0076A74B /* bottom_attention@3x.png in Resources */,
 				044C73B21E0B89EA006C524D /* search_icon@3x.png in Resources */,
+				04E5B9621E12341100E1990F /* topic_assent_sel@2x.png in Resources */,
+				04E5B9631E12341100E1990F /* topic_assent_sel@3x.png in Resources */,
 				048721F11E03CFDF0076A74B /* login_contact_icon@3x.png in Resources */,
+				04E5B9671E12341100E1990F /* topic_collect_sel@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

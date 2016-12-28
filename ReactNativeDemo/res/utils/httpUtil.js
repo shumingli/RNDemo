@@ -82,7 +82,7 @@ class HttpUtil extends React.Component{
             .then((responseJSON) => {
                 console.log('返回数据');
                 let resObj = JSON.parse(responseJSON);
-                // console.log(responseJSON);
+                console.log(responseJSON);
                 var code = resObj['code'];
                 //做全局处理
                 if (code == 1) {

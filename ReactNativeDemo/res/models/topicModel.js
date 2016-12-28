@@ -3,18 +3,6 @@
  *  问题列表model
  */
 
-// function TopicModel (topicId,suerId, userName,userIconUrl,topicDes,quesImg,attentionNum,askNum,qtype) {
-// 	this.topicId = topicId,
-// 	this.suerId = suerId,
-// 	this.userName = userName;
-// 	this.userIconUrl = userIconUrl;
-// 	this.topicDes = userName + "为什么教育这么重要为什么教育这么重要为什么教育这么重要为什么教育这么重要?";
-// 	this.quesImg = quesImg;
-// 	this.attentionNum = attentionNum;
-// 	this.askNum = askNum;
-// 	this.qtype = qtype;
-// }
-
 function TopicModel (serverDic){
 	this.topicId = serverDic.topicId;
 	this.userId = serverDic.user_id;

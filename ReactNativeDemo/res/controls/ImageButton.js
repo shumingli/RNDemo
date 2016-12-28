@@ -18,39 +18,36 @@
 import React, { PropTypes } from 'react';
 import {
   View,
-  Text,
+  Image,
   TouchableOpacity
 } from 'react-native';
 
 const propTypes = {
   onPress: PropTypes.func,
   disabled: PropTypes.bool,
-  style: Text.propTypes.style,
-  containerStyle: View.propTypes.style,
-  text: PropTypes.string,
-  activeOpacity: PropTypes.number
+  source: PropTypes.object,
+  style: View.propTypes.style,
+  containerStyle: View.propTypes.style
 };
 
-const Button = ({ onPress, disabled, style, containerStyle, text, activeOpacity }) => (
+const ImageButton = ({ onPress, disabled, source, style, containerStyle }) => (
   <TouchableOpacity
     style={containerStyle}
     onPress={onPress}
     disabled={disabled}
-    activeOpacity={activeOpacity}
   >
-    <Text style={style}>
-      {text}
-    </Text>
+    <Image
+      style={style}
+      source={source}
+    />
   </TouchableOpacity>
 );
 
-Button.propTypes = propTypes;
+ImageButton.propTypes = propTypes;
 
-Button.defaultProps = {
+ImageButton.defaultProps = {
   onPress() {},
-  disabled: false,
-  activeOpacity: 0.8
+  disabled: false
 };
 
-// export default Button;
-module.exports = Button;
+export default ImageButton;
