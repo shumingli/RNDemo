@@ -1,28 +1,26 @@
-
 /*
- * 首页
- */
+* 话题列表页
+*/
 
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
   Text,
   Image,
+  View,
   ListView,
   RefreshControl,
-  Alert,
   TouchableOpacity,
   InteractionManager,
 } from 'react-native';
 
-var TopicCellComponent = require('../components/topicCellComponent.js');
-var TopicModel = require('../models/topicModel.js');
+var TopicTypeCellComponent = require('../components/topicTypeCellComponent.js');
+var UserCellComponent = require('../components/userCellComponent.js');
+var TopicTypeModel = require('../models/topicTypeModel.js');
 var TopicDetailPage = require('../pages/topicDetailPage.js');
+var UserModel = require('../models/userModel.js');
 
-var TestPage = require('../pages/testPage.js');
-
-export default class HomePage extends BaseNavigatePage {
+export default class UserListPage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
 		const ds = new ListView.DataSource({
@@ -55,16 +53,16 @@ export default class HomePage extends BaseNavigatePage {
 	        userId : '1',
 	        index: this.state.curIndex,
 	    };
-		HttpUtil.request('get',ServerInterConfig.topicList,params,function (resObj) {
+		HttpUtil.request('get',ServerInterConfig.attentionUserList,params,function (resObj) {
 	        //下面的就是请求来的数据
 	        if (resObj['code'] == 1) {
 	        	dataArray = resObj['data'];
+	        	console.log("返回数据：");
+	        	console.log(dataArray);
 	        	var newData = [];
 	        	for (var i = 0; i < dataArray.length; i++) {
 	        		var item = dataArray[i];
-	        		console.log("返回数据：");
-	        		console.log(item);
-	        		var model = new TopicModel(item);
+	        		var model = new UserModel(item);
 	        		newData[i] = model;
 	        	};
 	        	if (self.state.curIndex == 0) {
@@ -72,7 +70,7 @@ export default class HomePage extends BaseNavigatePage {
 	        	}else{
 	        		self._data = self._data.concat(newData);
 	        	}
-
+	        	
 				self.setState({
 				    dataSource: self.state.dataSource.cloneWithRows(self._data),
 					isLoadingMore: false,
@@ -88,17 +86,6 @@ export default class HomePage extends BaseNavigatePage {
 	_toEnd() {
 		console.log("toEnd() --> ");
 		var self = this;
-          // const { reducer } = this.props;
-          // //ListView滚动到底部，根据是否正在加载更多 是否正在刷新 是否已加载全部来判断是否执行加载更多
-          // if (reducer.isLoadingMore 
-          // 	|| reducer.products.length >= reducer.totalProductCount 
-          // 	|| reducer.isRefreshing) {
-          //     return;
-          // };
-          // InteractionManager.runAfterInteractions(() => {
-          //     console.log("触发加载更多 toEnd() --> ");
-          //     this._loadMoreData();
-          // });
 		if (this.state.isLoadingMore) {
 			return;
 		} 
@@ -108,8 +95,6 @@ export default class HomePage extends BaseNavigatePage {
         });
     }
     _onTopicIconPress(rowData){
-    	console.log('tttt');
-    	console.log(rowData.topicId);
     	this._navigate(TestPage);
     }
     _onTopicCellPress(rowData){
@@ -117,17 +102,13 @@ export default class HomePage extends BaseNavigatePage {
     	this._navigate(TopicDetailPage);
     }
     _renderRow(rowData){
-    	return <TopicCellComponent 
-    		onTopicIconPress = {this._onTopicIconPress.bind(this,rowData)}
-    		onTopicCellPress = {this._onTopicCellPress.bind(this,rowData)}
-			topicModel = {rowData}  />
-		  
+    	return <UserCellComponent userModel = {rowData} />
+    				
     }
     _onRefresh(){
     	this.state.curIndex = 0;
     	this._loadMoreData();
     }
-	// http://www.jianshu.com/p/dff750d8c425
 	render(){
 		return(
 			<View style={styles.container}>
@@ -147,22 +128,19 @@ export default class HomePage extends BaseNavigatePage {
 					onEndReachedThreshold  = {50}
 					enableEmptySections = {true}  />
 			</View>
-		)
+		);
 	}
 }
 
 var styles = StyleSheet.create({
-	
 	container: {
-		flex: 1, 
+		flex: 1,
 		justifyContent: 'flex-start',
+		backgroundColor: 'white',
 	},
-	
 });
 
-module.exports = HomePage;
-
-
+module.exports = UserListPage;
 
 
 

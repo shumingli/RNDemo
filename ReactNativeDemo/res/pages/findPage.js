@@ -17,9 +17,10 @@ import {
 var ImageButton = require('../controls/ImageButton.js');
 var TopicCellComponent = require('../components/topicCellComponent.js');
 var TopicModel = require('../models/topicModel.js');
+var TopicTypeModel = require('../models/topicTypeModel.js');
 var TopicDetailPage = require('../pages/topicDetailPage.js');
 
-export default class FindPage extends Component {
+export default class FindPage extends BaseNavigatePage {
 	constructor(props){
 		super(props);
 
@@ -44,9 +45,12 @@ export default class FindPage extends Component {
 			isLoadingMore: false,
 			curIndex: 0,
 			sectionIds: rIds,
+
 		};
 		this._loadMoreData.bind(this);
 		this._loadMoreData();
+
+		this._topicTypeList();
 	}
 
 	_loadMoreData(){
@@ -93,7 +97,7 @@ export default class FindPage extends Component {
 	}
 
 	//分类item 点击事件
-	_itemClick(){
+	_topicTypeItemClick(index){
 
 	}
 	_onTopicIconPress(rowData){
@@ -123,36 +127,62 @@ export default class FindPage extends Component {
 		);
     }
 
-    _renderHeader(){
+    _topicTypeList(){
+    	var self = this;
+    	let params = {
+	        userId : '1',
+	        index: 0,
+	    };
+		HttpUtil.request('get',ServerInterConfig.topicTypeList,params,function (resObj) {
+	        //下面的就是请求来的数据
+	        if (resObj['code'] == 1) {
+	        	dataArray = resObj['data'];
+	        	console.log(dataArray);
+	        	var newData = [];
+	        	for (var i = 0; i < dataArray.length; i++) {
+	        		var item = dataArray[i];
+	        		var model = new TopicTypeModel(item);
+	        		newData[i] = model;
+	        	};
+	        	self.setState({topicTypeList: newData});
+	        } 
+	    })
+    }
+
+    _createItem(index){
     	var typeItems = [];
-	        //这里表示的是遍历其他组件传过来的数组。习惯了java的for循环，js中这个for循环看起来怪怪的
-	        var tt = ["1","2","3"];
-	        for (var i in tt) {
+    	if (this.state.topicTypeList != null && this.state.topicTypeList.length >= index+2) {
+	        for (var i=index; i<index+3; i++) {
+	        	var topicModel = this.state.topicTypeList[i];
+	        	var icon = {uri: topicModel.topicTypeImg}
 	            var text = (
 	                <TouchableOpacity
 	                	key = {"item"+i}
 					    style = {styles.typeItemContainerStyle}
-					    onPress = {this._itemClick.bind(this)}  >
+					    onPress = {this._topicTypeItemClick.bind(this,i)}  >
 					    <Image
-					      style = {styles.typeItemImageStyle}
-					      source = {require('image!topicType_icon1')} />
-					    <Text style = {styles.typeItemTextStyle}>教育</Text>
+					      	style = {styles.typeItemImageStyle}
+					      	source = {icon} />
+					    <Text style = {styles.typeItemTextStyle}>{topicModel.topicTypeName}</Text>
 					</TouchableOpacity>
 	            );
 	            //将传过来的数组内容放到新的数组中
 	            typeItems.push(text);
 	        }
-    		return (
-	    		<View> 
-					{this._titleComponent('精彩分类')}
-					<View style = {{flexDirection:'row',marginTop: 10}}>
-						{typeItems}
-					</View>
-					<View style = {{flexDirection:'row',marginTop: 10}}>
-						{typeItems}
-					</View>
-	    		</View>
-	    	);
+        };
+        return (<View style = {{flexDirection:'row',marginTop: 10}}>
+					{typeItems}
+				</View>);
+    }
+
+    _renderHeader(){
+		return (
+    		<View> 
+				{this._titleComponent('精彩分类')}
+				{this._createItem(0)}
+				{this._createItem(3)}
+    		</View>
+    	);
 
     }
     
@@ -165,7 +195,7 @@ export default class FindPage extends Component {
 			 this._titleComponent(title)
 		);
     }
-    //ListView 如何使用 http://www.jianshu.com/p/1293bb8ac969
+    
 	render(){
 		return(
 			<View style={styles.container}>
@@ -219,7 +249,7 @@ var styles = StyleSheet.create({
 	typeItemImageStyle: {
 		width: 80,
 		height: 80,
-
+		borderRadius: 40,
 	},
 	typeItemTextStyle: {
 		fontSize: 14,

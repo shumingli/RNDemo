@@ -23,6 +23,9 @@ class TestPage extends Component {
 			url: 'http://www.haibaotime.com/',
 			scalesPageToFit: true,
 		}
+
+
+		
 		
 	}
 

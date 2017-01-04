@@ -76,7 +76,7 @@ var styles = StyleSheet.create({
 	},
 	cellQusText: {
 		fontWeight:'bold',
-		color: '#000000',
+		color: '#333333',
 	    marginTop: 10,
 	    marginLeft: 10,
 	    fontSize: 18,
